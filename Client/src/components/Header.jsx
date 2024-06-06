@@ -8,7 +8,7 @@ import React from 'react';
 export default function Header() {
     const path = useLocation().pathname;
     return (
-        <Navbar className='border-b-2'>
+        <Navbar className='border-b-2 '>
             <Link
                 to='/'
                 className='self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white'
@@ -44,7 +44,7 @@ export default function Header() {
 
                 <Navbar.Toggle />
             </div>
-            <Navbar.Collapse>
+            <Navbar.Collapse >
                 <Navbar.Link active={path === '/'} as={'div'}>
                     <Link to='/'>Home</Link>
                 </Navbar.Link>
