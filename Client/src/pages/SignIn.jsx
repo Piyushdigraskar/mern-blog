@@ -2,12 +2,12 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import { Alert, Button, Label, Spinner, TextInput } from 'flowbite-react';
 import { useDispatch, useSelector } from 'react-redux';
-import {signInSuccess, signInStart, signInFailure} from '../redux/user/userSlice'
+import { signInSuccess, signInStart, signInFailure } from '../redux/user/userSlice'
 import Oauth from '../components/Oauth';
 
 export default function SignIn() {
   const [formData, setFormData] = useState({});
-  const {loading, error:errorMessage} = useSelector(state => state.user);
+  const { loading, error: errorMessage } = useSelector(state => state.user);
   const dispatch = useDispatch()
   const navigate = useNavigate();
 
@@ -17,7 +17,7 @@ export default function SignIn() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if ( !formData.email || !formData.password) {
+    if (!formData.email || !formData.password) {
       return dispatch(signInFailure('Please Fill out All the Form'));
     }
     try {
@@ -34,8 +34,8 @@ export default function SignIn() {
       if (data.success === false) {
         dispatch(signInFailure(data.message));
       }
-      
-      if(res.ok){
+
+      if (res.ok) {
         dispatch(signInSuccess(data));
         navigate('/');
       }
@@ -53,7 +53,7 @@ export default function SignIn() {
         <div className="flex-1">
           <Link
             to='/'
-            className=' font-bold dark:text-white text-4xl'
+            className='font-bold dark:text-white text-4xl'
           >
             <span className='px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white'>
               Piyush's
@@ -85,7 +85,9 @@ export default function SignIn() {
                 onChange={handleChange}
               />
             </div>
-            <Button className='bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white font-bold py-2 px-4 rounded' type='submit' disabled={loading}>
+            <Button gradientDuoTone='purpleToPink'
+              type='submit'
+              disabled={loading}>
               {loading ? (
                 <>
                   <Spinner size='sm' />
@@ -97,13 +99,13 @@ export default function SignIn() {
           </form>
           <div className='flex gap-2 text-sm mt-5'>
             <span >Don't Have an Account</span>
-            <Link to='/sign-up' className='text-blue-500 outline-cyan-400'>
+            <Link to='/sign-up' className='text-blue-500'>
               Sign-up
             </Link>
           </div>
           {
             errorMessage && (
-              <Alert className="mt-5 text-red-400">
+              <Alert className='mt-5' color='failure'>
                 {errorMessage}
               </Alert>
             )

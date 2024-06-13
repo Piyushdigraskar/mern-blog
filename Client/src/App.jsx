@@ -10,6 +10,7 @@ import Projects from './pages/Projects';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import PrivatRoute from './components/PrivatRoute';
+import 'flowbite/dist/flowbite.css';
 
 export default function App() {
   return (
