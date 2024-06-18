@@ -58,6 +58,7 @@ export default function DashPosts() {
         setUserPosts((prev)=>
           prev.filter((post)=> post._id !== postIdToDelete)
         )
+        
         // setUserPosts((prev) =>
         //   prev.filter((post) => post._id !== postIdToDelete)
         // );
