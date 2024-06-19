@@ -13,22 +13,22 @@ export default function Header() {
     const { theme } = useSelector((state => state.theme));
     const dispatch = useDispatch();
 
-    const handleSignout = async()=>{
+    const handleSignout = async () => {
         try {
-          const res = await fetch('/api/user/signout', {
-            method:"POST"
-          });
-          const data = await res.json();
-          if(!res.ok){
-            console.log(data.message);
-          }else{
-            dispatch(signoutSuccess(data));
-          }
+            const res = await fetch('/api/user/signout', {
+                method: "POST"
+            });
+            const data = await res.json();
+            if (!res.ok) {
+                console.log(data.message);
+            } else {
+                dispatch(signoutSuccess(data));
+            }
         } catch (error) {
-          console.log(error.message);
+            console.log(error.message);
         }
-      }
-    
+    }
+
 
     return (
         <Navbar className='border-b-2'>
@@ -70,8 +70,8 @@ export default function Header() {
                             }
                         >
                             <Dropdown.Header>
-                                <span className='block text-sm'>@{currentUser.username}</span>
-                                <span className='block text-sm font-medium truncate'>@{currentUser.email}</span>
+                                <span className='block text-sm'>@:{currentUser.username}</span>
+                                <span className='block text-sm font-medium truncate'>@:{currentUser.email}</span>
                             </Dropdown.Header>
                             <Link to='/dashboard?tab=profile'>
                                 <Dropdown.Item>Profile</Dropdown.Item>
@@ -93,13 +93,14 @@ export default function Header() {
                 <Navbar.Link active={path === '/'} as={'div'}>
                     <Link to='/'>Home</Link>
                 </Navbar.Link>
-                <Navbar.Link active={path === '/about'} as={'div'}>
+                <Navbar.Link active={path === '/about'} as={'div'}> 
                     <Link to='/about'>About</Link>
                 </Navbar.Link>
                 <Navbar.Link active={path === '/projects'} as={'div'}>
                     <Link to='/projects'>Projects</Link>
                 </Navbar.Link>
             </Navbar.Collapse>
+
         </Navbar>
     );
 }
