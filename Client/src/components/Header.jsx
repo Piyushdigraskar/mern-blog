@@ -86,19 +86,12 @@ export default function Header() {
                         </Link>
                     )
                 }
-                <Navbar.Toggle />
             </div>
-            <Navbar.Collapse>
-                <Navbar.Link active={path === '/'} as={'div'}>
+            <div className='flex justify-center items-center p-3 space-x-8 text-center text-teal-500'>
                     <Link to='/'>Home</Link>
-                </Navbar.Link>
-                <Navbar.Link active={path === '/about'} as={'div'}> 
                     <Link to='/about'>About</Link>
-                </Navbar.Link>
-                <Navbar.Link active={path === '/projects'} as={'div'}>
                     <Link to='/projects'>Projects</Link>
-                </Navbar.Link>
-            </Navbar.Collapse>
+            </div>
 
         </Navbar>
     );
