@@ -22,11 +22,12 @@ export default function FooterCom() {
               <Footer.Title title='About' />
               <Footer.LinkGroup col>
                 <Footer.Link
-                  href='https://www.Google.com'
+                  href='https://all-24-projects-site-5x148r1f7-piyush-digraskars-projects.vercel.app/
+'
                   target='_blank'
                   rel='noopener noreferrer'
                 >
-                  22 JS Projects
+                  24 JS Projects
                 </Footer.Link>
                 <Footer.Link
                   href='/about'
