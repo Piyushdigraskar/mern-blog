@@ -48,14 +48,14 @@ export default function FooterCom() {
                 >
                   Github
                 </Footer.Link>
-                <Footer.Link href='#'>Discord</Footer.Link>
+                <Footer.Link href='#' target='_blank'>Discord</Footer.Link>
               </Footer.LinkGroup>
             </div>
             <div>
               <Footer.Title title='Legal' />
               <Footer.LinkGroup col>
-                <Footer.Link href='#'>Privacy Policy</Footer.Link>
-                <Footer.Link href='#'>Terms &amp; Conditions</Footer.Link>
+                <Footer.Link href='#' target='_blank'>Privacy Policy</Footer.Link>
+                <Footer.Link href='#' target='_blank'>Terms &amp; Conditions</Footer.Link>
               </Footer.LinkGroup>
             </div>
           </div>
@@ -65,14 +65,15 @@ export default function FooterCom() {
           <Footer.Copyright
             href='#'
             by="Piyush's blog"
+            target='_blank'
             year={new Date().getFullYear()}
           />
           <div className="flex gap-6 sm:mt-0 mt-4 sm:justify-center">
-            <Footer.Icon href='#' icon={BsFacebook}/>
-            <Footer.Icon href='#' icon={BsInstagram}/>
-            <Footer.Icon href='#' icon={BsTwitter}/>
-            <Footer.Icon href='https://github.com' icon={BsGithub}/>
-            <Footer.Icon href='#' icon={BsDribbble}/>
+            <Footer.Icon href='#' target='_blank' icon={BsFacebook}/>
+            <Footer.Icon href='#' target='_blank' icon={BsInstagram}/>
+            <Footer.Icon href='#' target='_blank' icon={BsTwitter}/>
+            <Footer.Icon href='https://github.com' target='_blank' icon={BsGithub}/>
+            <Footer.Icon href='#' target='_blank' icon={BsDribbble}/>
 
           </div>
         </div>
